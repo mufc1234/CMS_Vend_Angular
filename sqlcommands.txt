@@ -1,0 +1,148 @@
+drop database CMS ;
+
+create database CMS;
+
+use  CMS;
+
+CREATE TABLE `Vendor` (
+	`Vendor_id` INT NOT NULL AUTO_INCREMENT,
+	`Vendor_name` varchar(255) NOT NULL ,
+	`Email` varchar(255) NOT NULL ,
+	`Phone` VARCHAR(255) NOT NULL ,
+	`Uname` VARCHAR(255) NOT NULL  UNIQUE,
+	`Password` VARCHAR(255) NOT NULL ,
+	`Balance` DECIMAL(65) NOT NULL ,
+	PRIMARY KEY (`Vendor_id`)
+);
+
+CREATE TABLE `menu_item` (
+	`item_id` INT NOT NULL AUTO_INCREMENT,
+	`item_name` varchar(255),
+	`item_price` DECIMAL,
+	`item_image` blob NOT NULL,
+	`Vendor_id` INT NOT NULL,
+	PRIMARY KEY (`item_id`)
+);
+
+ALTER TABLE `menu_item` ADD CONSTRAINT `menu_item_fk0` FOREIGN KEY (`Vendor_id`) REFERENCES `Vendor`(`Vendor_id`);
+
+desc menu_item;
+desc vendor;
+INSERT INTO `vendor` (`Vendor_id`,`vendor_name`,`Email`,`Phone`,`Uname`,`Password`,`Balance`) VALUES (3401,'American','american@gmail.com','7658098349','american','american123',4956.78);
+INSERT INTO `vendor` (`Vendor_id`,`vendor_name`,`Email`,`Phone`,`Uname`,`Password`,`Balance`) VALUES (3402,'Indian','indian@gmail.com','2983047896','indian','indian123',3958.69);
+
+alter table vendor modify balance decimal(55,14);
+
+
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`,`item_image`, `Vendor_id`) VALUES ('301', 'Honey Spritiz', '6.00','img','3401');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`,`item_image`, `Vendor_id`) VALUES ('302', 'Valley Soup', '9.00','img', '3401');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`, `item_image`,`Vendor_id`) VALUES ('303', 'Honey Tee', '7.50', 'img','3401');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`,`item_image`, `Vendor_id`) VALUES ('304', 'Lemon Tea', '7.99', 'img','3401');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`,`item_image`, `Vendor_id`) VALUES ('305', 'Margarita', '8.99', 'img','3401');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`,`item_image`, `Vendor_id`) VALUES ('306', 'Mineral Water', '8.99', 'img','3401');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`,`item_image`, `Vendor_id`) VALUES ('307', 'Wild Mushroom Ravioli', '4.99','img', '3401');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`,`item_image`, `Vendor_id`) VALUES ('308', 'Braised Pork Belly', '9.99','img', '3401');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`, `item_image`,`Vendor_id`) VALUES ('309', 'Chilled Oysters', '10.99','img', '3401');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`,`item_image`, `Vendor_id`) VALUES ('310', 'Chicken Fried Quail', '11.00','img', '3401');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`, `item_image`,`Vendor_id`) VALUES ('311', 'Tequila Cured Salmon', '9.99','img', '3401');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`,`item_image`, `Vendor_id`) VALUES ('312', 'Grilled Asparagus', '10.50','img', '3401');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`,`item_image`, `Vendor_id`) VALUES ('313', 'Roasted Chicken', '4.99','img', '3401');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`, `item_image`,`Vendor_id`) VALUES ('314', 'Grilled Steak', ' 9.99','img','3401');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`, `item_image`,`Vendor_id`) VALUES ('315', 'Sauted Salmon', '10.99','img', '3401');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`,`item_image`, `Vendor_id`) VALUES ('316', 'Sauted Cod', '11.00', 'img','3401');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`,`item_image`, `Vendor_id`) VALUES ('317', 'Roasted Duck', '9.99','img','3401');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`,`item_image`, `Vendor_id`) VALUES ('318', 'Grilled Strip', '10.50', 'img','3401');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`,`item_image`, `Vendor_id`) VALUES ('401', 'Coffee', '6.00', 'img','3402');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`, `item_image`,`Vendor_id`) VALUES ('402', 'Lassi', '9.00','img', '3402');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`, `item_image`,`Vendor_id`) VALUES ('403', 'Milk', '7.50', 'img','3402');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`, `item_image`,`Vendor_id`) VALUES ('404', 'Iced Tea', '7.99','img', '3402');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`, `item_image`,`Vendor_id`) VALUES ('405', 'Mango Juice', '8.99', 'img','3402');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`, `item_image`,`Vendor_id`) VALUES ('406', 'Mineral Water', '8.99','img', '3402');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`, `item_image`,`Vendor_id`) VALUES ('407', 'Chana Nan', '9.99','img', '3402');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`, `item_image`,`Vendor_id`) VALUES ('408', 'Chicken Tikka', '9.99','img','3402');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`, `item_image`,`Vendor_id`) VALUES ('409', 'Cheakpea Salad', '10.99','img','3402');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`,`item_image`, `Vendor_id`) VALUES ('410', 'Chicken 65', '11.00','img', '3402');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`, `item_image`,`Vendor_id`) VALUES ('411', 'Chicken Tikka Salad', '9.99','img','3402');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`,`item_image`, `Vendor_id`) VALUES ('412', 'Pappad', '10.50','img', '3402');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`, `item_image`,`Vendor_id`) VALUES ('413', 'Curry', '4.99', 'img','3402');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`,`item_image`, `Vendor_id`) VALUES ('414', 'Chicken Karahi', '9.99','img', '3402');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`, `item_image`,`Vendor_id`) VALUES ('415', 'Kebab', '10.99', 'img','3402');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`, `item_image`,`Vendor_id`) VALUES ('416', 'Duipaza', '11.00','img', '3402');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`, `item_image`,`Vendor_id`) VALUES ('417', 'Chicken Korma', '9.99','img', '3402');
+INSERT INTO `menu_item` (`item_id`, `item_name`, `item_price`,`item_image`, `Vendor_id`) VALUES ('418', 'Dal Makhni', '10.50','img', '3402');
+
+Alter table menu_item modify item_image varchar(65);
+
+CREATE TABLE `Order` (
+`Order_id` INT NOT NULL AUTO_INCREMENT,
+`item_id` INT NOT NULL,
+`user_id` INT NOT NULL,
+`quantity` INT NOT NULL,
+`date` DATE NOT NULL,
+`time` TIME NOT NULL,
+`token` INT NOT NULL UNIQUE,
+`Vendor_id` INT NOT NULL,
+`Tprice` DECIMAL NOT NULL,
+`Status` INT NOT NULL,
+`Msg` varchar(255) NOT NULL,
+PRIMARY KEY (`Order_id`)
+);
+
+ALTER TABLE `Order` ADD CONSTRAINT `Order_fk0` FOREIGN KEY (`item_id`) REFERENCES `menu_item`(`item_id`);
+
+ALTER TABLE `Order` ADD CONSTRAINT `Order_fk1` FOREIGN KEY (`user_id`) REFERENCES `Employee`(`User_id`);
+
+ALTER TABLE `Order` ADD CONSTRAINT `Order_fk2` FOREIGN KEY (`Vendor_id`) REFERENCES `Vendor`(`Vendor_id`);
+
+CREATE TABLE `Employee` (
+`User_id` INT NOT NULL AUTO_INCREMENT,
+`User_name` varchar(255),
+`User_Email` varchar(255),
+`User_phone` VARCHAR(255) NOT NULL,
+`User_password` VARCHAR(255) NOT NULL,
+`role` varchar(255) NOT NULL,
+`image` blob(255) NOT NULL,
+`user_balance` DECIMAL(4,2) NOT NULL,
+`Phone` VARCHAR(255) NOT NULL,
+PRIMARY KEY (`User_id`)
+);
+
+ALTER TABLE EMPLOYEE modify COLUMN IMAGE VARCHAR(65);
+
+ALTER TABLE EMPLOYEE DROP COLUMN PHONE;
+
+ALTER TABLE EMPLOYEE MODIFY COLUMN user_balance decimal(8,2);
+
+insert into employee values('100','Priyanka Sriramasetty','priya@gmail.com','6572488945','priya31','Employee','priyanka.jpg',256);
+insert into `order` values(1000,407,100,2,'2015-12-01','22:00',55,3402,19.98,0,'request pending action');
+
+INSERT INTO `employee` (`User_Id`,`User_name`,`User_Email`,`User_Phone`,`User_Password`,`role`,`Image`,`user_balance`) VALUES (101,'Prasanna','prasanna@gmail.com','7658044349','prasi65','Employee','prasanna.jpg',555);
+INSERT INTO `employee` (`User_Id`,`User_name`,`User_Email`,`User_Phone`,`User_Password`,`role`,`Image`,`user_balance`) VALUES (102,'Rohit','rohit@gmail.com','7658099349','rohit65','Employee','rohit.jpg',343);
+
+alter table `order` modify Tprice decimal(5,3);
+
+delete from `order`;
+
+Alter table  `order` add checkstatus enum('false','true') not null default 'false';
+
+insert into `order` values(1000,407,100,2,'2015-12-01','22:00',55,3402,19.98,0,'request pending action','false');
+
+insert into `order` values(1001,410,100,2,'2015-12-01','22:30',56,3402,22,0,'request pending action','false');
+
+insert into `order` values(1002,416,100,2,'2015-12-01','22:50',57,3402,22,0,'request pending action','false');
+
+insert into `order` values(1003,416,100,2,'2015-12-01','23:00',58,3402,22,0,'request pending action','false');
+insert into `order` values(1004,416,100,2,'2015-12-01','23:00',59,3402,22,0,'request pending action','false');
+
+
+insert into `order` values(1005,416,100,2,'2015-12-01','23:50',60,3402,22,0,'request pending action','false');
+insert into `order` values(1006,416,100,2,'2015-12-01','23:55',61,3402,22,0,'request pending action','false');
+insert into `order` values(1008,301,100,2,'2015-12-01','23:55',63,3401,12,0,'request pending action','true');
+insert into `order` values(1009,301,101,2,'2015-12-01','23:55',64,3401,12,0,'request pending action','true');
+insert into `order` values(1010,301,102,2,'2015-12-01','23:55',65,3401,12,0,'request pending action','true');
+insert into `order` values(1011,301,102,2,'2015-12-01','23:55',66,3401,12,0,'request pending action','true');
+
+update menu_item set item_image = "assets\\images\\American.jpg" where Vendor_id = 3401;
+update menu_item set item_image = "assets\\images\\Pappada.jpg" where Vendor_id = 3402;
+
+item_image in menu item has to be set default to assets\\images\\American.jpg.
