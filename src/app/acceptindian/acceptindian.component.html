@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#"><img src="assets/images/logo.png" style="width:50px"></a>
+      
+        <!-- Links -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" routerLink="/home">Log Out</button>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/indian-vendor">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+                <a class="nav-link" routerLink="/acceptind">Requests <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                    <a class="nav-link" routerLink="/iprofile">Profile <span class="sr-only">(current)</span></a>
+                  </li>
+    
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/indiantran">History <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </nav>
+
+<main role="main">
+
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="jumbotron-heading">Order Request</h1>
+                
+                <button type="button" class="btn btn-success" title="Check the balance"  (click)="bal()">Check Balance here</button>
+                   
+            </div>
+        </section>
+    
+        <div class="album py-5 bg-light">
+            <div class="container text-center">
+    
+                <div class="row text-center">
+                    <div class="col-md-12 text-center">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>OrderID</th>
+                                <th>Names</th>
+                                <th>EmpId</th>
+                                <th>Order</th>
+                                <th>Quantity</th>
+                                <th>TotalPrice</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let o of acceptOrders">
+                                <td style="width: 150px"><strong>{{o.vorder_id}}</strong></td>
+                                <td style="width: 150px"><strong>{{o.vuser_name}}</strong></td>
+                                <td style="width: 150px"><strong>{{o.vuser_id}}</strong></td>
+                                <td style="width: 150px"><strong>{{o.vitem_name}}</strong></td>
+                                <td style="width: 150px"><strong>{{o.vquantity}}</strong></td>
+                                <td style="width: 150px"><strong>{{o.vTotalprice}}</strong></td>
+                                <td>
+                                        <div class="btn-group">
+                                                <button type="button" class="btn btn-sm" title="Edit Menu Item"
+                                                    (click)="edit(o)"><i class="fas fa-check"></i></button> &nbsp; &nbsp;
+                                                <button type="button" class="btn btn-sm" title="Delete Menu Item"
+                                                    (click)="delete(o)"><i class="fas fa-times"></i> </button>
+                                            </div>
+                                </td>
+                               
+                           </tr>
+                        </tbody>
+    
+                        </table>
+    
+                    </div>
+    
+    
+                </div>
+            </div>
+        </div>
+    
+    
+    
+    </main>

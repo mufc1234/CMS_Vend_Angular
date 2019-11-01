@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Rohit",
+        "amount": 6.00,
+        "items": "Tea"
+    },
+    {         
+        "id": 2,
+        "name": "Prasanna",
+        "amount": 9.00,
+        "items": "Black Coffee"
+    },
+    {
+        "id" : 3,
+        "name": "Priyanka",
+        "amount": 7.50,
+        "items": "Mango juice"
+    },
+    {
+        "id" : 4,
+        "name": "Sonal",
+        "amount": 7.99,
+        "items": "Chole puri"
+    },
+    {
+        "id" : 5,
+        "name": "Ankita",
+        "amount": 8.99,
+        "items": "Chole-Bhature"
+    },
+    {
+        "id" : 6,
+        "name": "Amit",
+        "amount": 8.99,
+        "items": "Briyani"
+    },
+    {
+        "id" : 7,
+        "name": "Rahil",
+        "amount": 4.99,
+        "items": "Paratha"     
+    }
+]
